@@ -11,7 +11,6 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-st.header('RSF-based model for predicting survival of Gastric cancer', anchor='survival-of-Gastric cancer')
 
 @st.cache_data(show_spinner=False)
 def load_setting():
