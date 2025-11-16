@@ -174,11 +174,13 @@ def predict():
     ax.legend()
     st.pyplot(fig)
 
+st.header('RSF-based model for predicting survival of Gastric cancer', anchor='survival-of-Gastric cancer')
+
 settings, input_keys = load_setting() 
 rsf = get_model()
 sidebar_code = get_code()
 
-st.header('RSF-based model for predicting survival of Gastric cancer', anchor='survival-of-Gastric cancer')
+
 
 
 # 侧边栏表单
