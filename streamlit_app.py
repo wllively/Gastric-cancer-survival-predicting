@@ -185,6 +185,7 @@ sidebar_code = get_code()
 
 st.header('RSF-based model for predicting survival of Gastric cancer',
           anchor='survival-of-Gastric-cancer')
+
 result_box = st.container()          # 占位
 
 # 2. 侧边栏 form
