@@ -183,19 +183,21 @@ rsf = get_model()
 sidebar_code = get_code()
 
 
+st.header('RSF-based model for predicting survival of Gastric cancer',
+          anchor='survival-of-Gastric-cancer')
+result_box = st.container()          # 占位
 
-
-# 侧边栏表单
+# 2. 侧边栏 form
 with st.sidebar:
     st.title("Patient parameter entry")
-    with st.form("my_form", clear_on_submit=False): 
-        
+    with st.form("my_form", clear_on_submit=False):
         for code in sidebar_code:
             exec(code)
-            
         col8, col9, col10 = st.columns([2, 6, 2])
         with col9:
-            prediction = st.form_submit_button(
-                'Predict',
-                on_click=predict
-            )
+            submitted = st.form_submit_button('Predict')  # 去掉 on_click
+
+# 3. 提交后把结果插到盒子
+if submitted:
+    with result_box:
+        predict()
