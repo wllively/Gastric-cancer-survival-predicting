@@ -11,6 +11,8 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+st.header('RSF-based model for predicting survival of Gastric cancer', anchor='survival-of-Gastric cancer')
+
 @st.cache_data(show_spinner=False)
 def load_setting():
     settings ={
@@ -174,7 +176,7 @@ def predict():
     ax.legend()
     st.pyplot(fig)
 
-st.header('RSF-based model for predicting survival of Gastric cancer', anchor='survival-of-Gastric cancer')
+
 
 settings, input_keys = load_setting() 
 rsf = get_model()
@@ -191,7 +193,7 @@ with st.sidebar:
         for code in sidebar_code:
             exec(code)
             
-        col8, col9, col10 = st.columns([3, 4, 3])
+        col8, col9, col10 = st.columns([2, 6, 2])
         with col9:
             prediction = st.form_submit_button(
                 'Predict',
